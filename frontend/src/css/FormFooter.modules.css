@@ -1,0 +1,21 @@
+.custom-input2 {
+    top:0px;
+      border: none;
+      color: black;
+    }
+    .custom-input2:focus {
+        border: 1px solid #5b9aff;
+        border-radius: 5px;
+        box-shadow: none;
+        outline: none; 
+      }
+      
+      .custom-input2:hover {
+        border: 1px solid #5b9aff;
+        border-radius: 5px;
+      }
+    
+      .custom-input2{
+        max-width: 100%;
+      }
+    

@@ -19,12 +19,8 @@ select.form-control:hover{
     box-shadow: none;
 }
 
-.responsive-input {
-    width: 100%; /* Default to full width */
+.responsive-input2 {
+    width: 100% ; /* Default to full width */
   }
   
-  @media (min-width: 768px) {
-    .responsive-input {
-      width: 50%; /* 50% width for screens larger than 768px (e.g., laptops) */
-    }
-  }
+  

@@ -12,12 +12,37 @@ const ClientDetailForm = () => {
     country: 'India' // Set default value to 'India'
   });
 
+  const [formData2, setFormData2] = useState({
+   invoice: 'Invoice#',
+    invoiceValue: '',
+    invoiceDate: 'Invoice Date',
+    IDate: '',
+    dueDate: 'Due Date',
+    DDate: '',
+  });
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value
     }));
+  };
+
+  const handleInputChange2 = (e) => {
+    const { name, value } = e.target;
+    setFormData2((prevData) => ({
+      ...prevData,
+      [name]: value
+    }));
+  };
+
+  const getCurrentDate = () => {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const dd = String(today.getDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
   };
 
   const statesOfIndia = [
@@ -29,11 +54,12 @@ const ClientDetailForm = () => {
   ];
 
   return (
-    <div className="d-flex">
-         <form action="">
+    <div className="row">
+      <div className="col-md-6">
+      <form action="" >
       <input
         type="text"
-        className="form-control responsive-input"
+        className="form-control responsive-input2"
         name="clientName"
         placeholder="Bill to : "
         value={formData.clientName}
@@ -52,7 +78,7 @@ const ClientDetailForm = () => {
       />
       <input
         type="text"
-        className="form-control responsive-input mt-1"
+        className="form-control responsive-input2 mt-1"
         name="companyName"
         placeholder="Your Client's Company"
         value={formData.companyName}
@@ -70,7 +96,7 @@ const ClientDetailForm = () => {
       />
       <input
         type="text"
-        className="form-control responsive-input mt-1"
+        className="form-control responsive-input2 mt-1"
         name="gstin"
         placeholder="Client's GSTIN"
         value={formData.gstin}
@@ -88,7 +114,7 @@ const ClientDetailForm = () => {
       />
       <input
         type="text"
-        className="form-control responsive-input mt-1"
+        className="form-control responsive-input2 mt-1"
         name="address"
         placeholder="Client's address"
         value={formData.address}
@@ -106,7 +132,7 @@ const ClientDetailForm = () => {
       />
       <input
         type="text"
-        className="form-control responsive-input mt-1"
+        className="form-control responsive-input2 mt-1"
         name="city"
         placeholder="City"
         value={formData.city}
@@ -123,7 +149,7 @@ const ClientDetailForm = () => {
         }}
       />
       <select
-        className="form-control responsive-input mt-1 py-0"
+        className="form-control responsive-input2 mt-1 py-0"
         name="state"
         value={formData.state}
         onChange={handleInputChange}
@@ -139,7 +165,7 @@ const ClientDetailForm = () => {
         ))}
       </select>
       <select
-        className="form-control responsive-input mt-1 py-0"
+        className="form-control responsive-input2 mt-1 py-0"
         name="country"
         value={formData.country}
         onChange={handleInputChange}
@@ -155,6 +181,141 @@ const ClientDetailForm = () => {
         ))}
       </select>
     </form>
+      </div>
+      <div className="col-md-6">
+      <form action="" >
+        <div className="d-flex flex-wrap">
+      <input
+        type="text"
+        className="form-control responsive-input"
+        name="invoice"
+        placeholder="Invoice#"
+        value={formData2.invoice}
+        onChange={handleInputChange2}
+        style={{
+          height: '25px', // Updated height
+          padding: '10px',
+          fontSize: '16px',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          border: 'none',
+          textAlign: 'left',
+          color:  'GrayText',
+          fontWeight: 'bold', 
+          flex:'1'
+        }}
+      />
+      <input
+        type="text"
+        className="form-control responsive-input mx-1"
+        name="invoiveValue"
+        placeholder="INV-12"
+        value={formData.invoiceValue}
+        onChange={handleInputChange2}
+        style={{
+          height: '25px', // Updated height
+          padding: '10px',
+          fontSize: '16px',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          border: 'none',
+          textAlign: 'left',
+          color: formData.invoiceValue ? 'black' : 'GrayText',
+          flex:'2'
+        }}
+      />
+      </div>
+        <div className="d-flex flex-wrap mt-2">
+      <input
+        type="invoiceDate"
+        className="form-control responsive-input"
+        name="invoiceDate"
+        placeholder="Invoice Date"
+        value={formData2.invoiceDate}
+        onChange={handleInputChange2}
+        style={{
+          height: '25px', // Updated height
+          padding: '10px',
+          fontSize: '16px',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          border: 'none',
+          textAlign: 'left',
+          color:  'GrayText',
+          fontWeight: 'bold', 
+          flex:'1'
+        }}
+      />
+      <input
+        type="date"
+        className="form-control responsive-input mx-1"
+        name="IDate"
+        placeholder=""
+        value={formData.IDate}
+        onChange={handleInputChange2}
+        style={{
+          height: '25px', // Updated height
+          padding: '10px',
+          fontSize: '16px',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          border: 'none',
+          textAlign: 'left',
+          color: formData.invoiceValue ? 'black' : 'GrayText',
+          flex:'2'
+        }}
+      />
+      </div>
+      <div className="d-flex flex-wrap mt-2">
+      <input
+        type="dueDate"
+        className="form-control responsive-input"
+        name="dueDate"
+        placeholder="Due Date"
+        value={formData2.dueDate}
+        onChange={handleInputChange2}
+        style={{
+          height: '25px', // Updated height
+          padding: '10px',
+          fontSize: '16px',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          border: 'none',
+          textAlign: 'left',
+          color:  'GrayText',
+          fontWeight: 'bold', 
+          flex:'1'
+        }}
+      />
+      <input
+        type="date"
+        className="form-control responsive-input mx-1"
+        name="DDate"
+        placeholder={getCurrentDate()}
+        value={formData.DDate}
+        onChange={handleInputChange2}
+        style={{
+          height: '25px', // Updated height
+          padding: '10px',
+          fontSize: '16px',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+          border: 'none',
+          textAlign: 'left',
+          color: formData.invoiceValue ? 'black' : 'GrayText',
+          flex:'2'
+        }}
+      />
+      </div>
+     
+    </form>
+      </div>
+        
+        
+
+    
+
+    
     
     </div>
    
