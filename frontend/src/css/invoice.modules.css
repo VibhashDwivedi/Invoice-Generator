@@ -1,0 +1,36 @@
+.add-logo {
+    margin-top: 5px;
+    border: 1px dashed #dbe8fd;
+    display: block;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    width: 20%;
+    color: #5b9aff;
+    cursor: pointer;
+    text-align: center;
+    background-color: #fbfcff;
+    overflow: hidden;
+    width: 120px;
+    height: 80px;
+}
+
+.inv-header-container, .upload-logo-section {
+    width: 50%;
+}
+
+.upload-logo-section {
+    display: contents;
+}
+
+
+input.form-control:focus{
+    outline: 1px solid #5b9aff ; 
+    border-radius: 4px;
+    box-shadow: none;
+}
+input.form-control:hover{
+    outline: 1px solid #5b9aff ; 
+    border-radius: 4px;
+    box-shadow: none;
+}

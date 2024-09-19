@@ -1,0 +1,30 @@
+input.form-control:focus{
+    outline: 1px solid #5b9aff ; 
+    border-radius: 4px;
+    box-shadow: none;
+}
+input.form-control:hover{
+    outline: 1px solid #5b9aff ; 
+    border-radius: 4px;
+    box-shadow: none;
+}
+select.form-control:focus{
+    outline: 1px solid #5b9aff ; 
+    border-radius: 4px;
+    box-shadow: none;
+}
+select.form-control:hover{
+    outline: 1px solid #5b9aff ; 
+    border-radius: 4px;
+    box-shadow: none;
+}
+
+.responsive-input {
+    width: 100%; /* Default to full width */
+  }
+  
+  @media (min-width: 768px) {
+    .responsive-input {
+      width: 50%; /* 50% width for screens larger than 768px (e.g., laptops) */
+    }
+  }
