@@ -1,17 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../css/FormFooter.modules.css";
+import { InvoiceContext } from '../InvoiceContext';
 
 const FormFooter = () => {
-  const [formData, setFormData] = useState({
-    notes: "Notes",
-    notesDescription: "It was great doing business with you.",
-    termsConditions: "Terms & Conditions",
-    termsConditionsDescription: "Please make the payment by the due date."
-  });
+  
+  const { formData4, setFormData4 } = useContext(InvoiceContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setFormData4((prevData) => ({
       ...prevData,
       [name]: value
     }));
@@ -23,7 +20,7 @@ const FormFooter = () => {
         <input
           type="text"
           name="notes"
-          value={formData.notes}
+          value={formData4.notes}
           placeholder="Notes"
           className="custom-input2 fs-6 fw-medium mb-1"
           onChange={handleChange}
@@ -31,7 +28,7 @@ const FormFooter = () => {
         />
         <textarea
           name="notesDescription"
-          value={formData.notesDescription}
+          value={formData4.notesDescription}
           placeholder="Notes Description"
           className="custom-input2 fs-6 mb-4"
           onChange={handleChange}
@@ -40,7 +37,7 @@ const FormFooter = () => {
         <input
           type="text"
           name="termsConditions"
-          value={formData.termsConditions}
+          value={formData4.termsConditions}
           placeholder="Terms & Conditions"
           className="custom-input2 fs-6 fw-medium mb-1"
           onChange={handleChange}
@@ -48,7 +45,7 @@ const FormFooter = () => {
         />
         <textarea
           name="termsConditionsDescription"
-          value={formData.termsConditionsDescription}
+          value={formData4.termsConditionsDescription}
           placeholder="Terms & Conditions Description"
           className="custom-input2 fs-6 mb-2"
           onChange={handleChange}

@@ -1,60 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../css/table.modules.css"; // Import the CSS file
+import { InvoiceContext } from "../InvoiceContext";
 
 const Table = () => {
-  const [headerData, setHeaderData] = useState({
-    itemDescLabel: "Item Description",
-    qtyLabel: "Qty",
-    rateLabel: "Rate",
-    sgstLabel: "SGST",
-    cgstLabel: "CGST",
-    cessLabel: "Cess",
-    amountLabel: "Amount",
-    subTotalLabel: "Sub-Total",
-  });
+  const { headerData, setHeaderData, rows, setRows } = useContext(InvoiceContext);
 
-  const [rows, setRows] = useState([
-    {
-      itemDesc: "Broucher Design",
-      additionalInfo: "",
-      qty: "2",
-      rate: "100",
-      sgst: "6",
-      cgst: "6",
-      cess: "0",
-      calculatedSgst: "12.00",
-      calculatedCgst: "12.00",
-      calculatedCess: "0.00",
-      amount: "200.00",
-    },
-    {
-      itemDesc: "",
-      additionalInfo: "",
-      qty: "1",
-      rate: "0",
-      sgst: "0",
-      cgst: "0",
-      cess: "0",
-      calculatedSgst: "0.00",
-      calculatedCgst: "0.00",
-      calculatedCess: "0.00",
-      amount: "0.00",
-    },
-    {
-      itemDesc: "",
-      additionalInfo: "",
-      qty: "1",
-      rate: "0",
-      sgst: "0",
-      cgst: "0",
-      cess: "0",
-      calculatedSgst: "0.00",
-      calculatedCgst: "0.00",
-      calculatedCess: "0.00",
-      amount: "0.00",
-    },
-  ]);
-
+  
   const handleHeaderChange = (e) => {
     const { name, value } = e.target;
     setHeaderData((prevData) => ({

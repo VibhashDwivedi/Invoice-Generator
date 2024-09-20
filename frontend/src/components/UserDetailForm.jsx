@@ -1,20 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../css/UserDetailForm.modules.css';
+import { InvoiceContext } from '../InvoiceContext';
+
 
 const UserDetailForm = () => {
-  const [formData, setFormData] = useState({
-    companyName: '',
-    yourName: '',
-    gstin: '',
-    address: '',
-    city: '',
-    state: '',
-    country: 'India' // Set default value to 'India'
-  });
+ 
+  const { formData1, setFormData1 } = useContext(InvoiceContext);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setFormData1((prevData) => ({
       ...prevData,
       [name]: value
     }));
@@ -35,7 +30,7 @@ const UserDetailForm = () => {
         className="form-control responsive-input"
         name="companyName"
         placeholder="Your Company"
-        value={formData.companyName}
+        value={formData1.companyName}
         onChange={handleInputChange}
         style={{
           height: '25px', // Updated height
@@ -45,7 +40,7 @@ const UserDetailForm = () => {
           whiteSpace: 'nowrap',
           border: 'none',
           textAlign: 'left',
-          color: formData.companyName ? 'black' : 'GrayText'
+          color: formData1.companyName ? 'black' : 'GrayText'
         }}
       />
       <input
@@ -53,7 +48,7 @@ const UserDetailForm = () => {
         className="form-control responsive-input mt-1"
         name="yourName"
         placeholder="Your Name"
-        value={formData.yourName}
+        value={formData1.yourName}
         onChange={handleInputChange}
         style={{
           height: '25px', // Updated height
@@ -63,7 +58,7 @@ const UserDetailForm = () => {
           whiteSpace: 'nowrap',
           border: 'none',
           textAlign: 'left',
-          color: formData.yourName ? 'black' : 'GrayText'
+          color: formData1.yourName ? 'black' : 'GrayText'
         }}
       />
       <input
@@ -71,7 +66,7 @@ const UserDetailForm = () => {
         className="form-control responsive-input mt-1"
         name="gstin"
         placeholder="Company's GSTIN"
-        value={formData.gstin}
+        value={formData1.gstin}
         onChange={handleInputChange}
         style={{
           height: '25px', // Updated height
@@ -81,7 +76,7 @@ const UserDetailForm = () => {
           whiteSpace: 'nowrap',
           border: 'none',
           textAlign: 'left',
-          color: formData.gstin ? 'black' : 'GrayText'
+          color: formData1.gstin ? 'black' : 'GrayText'
         }}
       />
       <input
@@ -89,7 +84,7 @@ const UserDetailForm = () => {
         className="form-control responsive-input mt-1"
         name="address"
         placeholder="Company's address"
-        value={formData.address}
+        value={formData1.address}
         onChange={handleInputChange}
         style={{
           height: '25px', // Updated height
@@ -99,7 +94,7 @@ const UserDetailForm = () => {
           whiteSpace: 'nowrap',
           border: 'none',
           textAlign: 'left',
-          color: formData.address ? 'black' : 'GrayText'
+          color: formData1.address ? 'black' : 'GrayText'
         }}
       />
       <input
@@ -107,7 +102,7 @@ const UserDetailForm = () => {
         className="form-control responsive-input mt-1"
         name="city"
         placeholder="City"
-        value={formData.city}
+        value={formData1.city}
         onChange={handleInputChange}
         style={{
           height: '25px', // Updated height
@@ -117,18 +112,18 @@ const UserDetailForm = () => {
           whiteSpace: 'nowrap',
           border: 'none',
           textAlign: 'left',
-          color: formData.city ? 'black' : 'GrayText'
+          color: formData1.city ? 'black' : 'GrayText'
         }}
       />
       <select
         className="form-control responsive-input mt-1 py-0"
         name="state"
-        value={formData.state}
+        value={formData1.state}
         onChange={handleInputChange}
         style={{
          
           border: 'none',
-          color: formData.state ? 'black' : 'GrayText',
+          color: formData1.state ? 'black' : 'GrayText',
         }}
       >
         <option value="" disabled>State</option>
@@ -139,12 +134,12 @@ const UserDetailForm = () => {
       <select
         className="form-control responsive-input mt-1 py-0"
         name="country"
-        value={formData.country}
+        value={formData1.country}
         onChange={handleInputChange}
         style={{
          
           border: 'none',
-          color: formData.country ? 'black' : 'GrayText',
+          color: formData1.country ? 'black' : 'GrayText',
         }}
       >
         <option value="" disabled>Country</option>
