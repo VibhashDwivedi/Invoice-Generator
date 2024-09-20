@@ -33,7 +33,26 @@ The project is an Invoice Generator application built using React. It allows use
 4. ReactToPrint: For printing components directly from the browser.
 5. Context API: For managing global state, such as theme and invoice data.
 ```
-    
+## Screenshots
+
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(374).png?raw=true)
+
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(375).png?raw=true)
+
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(376).png?raw=true)
+
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(370).png?raw=true)
+
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(369).png?raw=true)
+
+`Standard`
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(371).png?raw=true)
+
+`Spreadsheet`
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(372).png?raw=true)
+
+`Compact`
+![(https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(373).png?raw=true)
 
 ### Link
 [https://invoice-generator-two-peach.vercel.app/](https://invoice-generator-two-peach.vercel.app/)
