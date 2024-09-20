@@ -1,4 +1,4 @@
-import React, { useState, forwardRef, useContext } from "react";
+import React, { forwardRef, useContext } from "react";
 import "../css/invoice.modules.css";
 import '../css/UserDetailForm.modules.css';
 import UserDetailForm from "./UserDetailForm";
@@ -74,16 +74,9 @@ const Invoice = forwardRef((props, ref) => {
             </label>
           </div>
           {logo ? (
-            <div className="mx-4 fs-6 mt-2">
-              <button
-                className="btn btn-primary me-2"
-                onClick={() => document.getElementById("org_logo").click()}
-              >
-                Edit
-              </button>
-              <button className="btn btn-danger" onClick={handleLogoDelete}>
-                Delete
-              </button>
+              <div className="d-flex flex-column mt-3 ">
+              <div className=" me-2" onClick={() => document.getElementById('org_logo').click()}><i className="fa-solid fa-pen" style={{color:'blue'}}></i></div>
+              <div className="" onClick={handleLogoDelete}><i className="fa-solid fa-trash" style={{color:'red'}}></i></div>
             </div>
           ) : (
             <div className="mx-4 fs-6 mt-2">

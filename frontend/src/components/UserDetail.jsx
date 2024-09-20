@@ -12,7 +12,7 @@ const UserDetail = () => {
       <div> {formData1.city}</div>
       <div> {formData1.state}</div>
       <div>{formData1.country}</div>
-      <div> GSTIN {formData1.gstin}</div>
+      {formData1.gstin && <div>GSTIN {formData1.gstin}</div>}
     </>
   );
 };

@@ -15,7 +15,7 @@ function App() {
               <div className="col-md-8">
                 <Invoice />
               </div>
-              <div className="col-md-4 ">
+              <div className="col-md-4 download ">
                 <Download />
               </div>
             </div>

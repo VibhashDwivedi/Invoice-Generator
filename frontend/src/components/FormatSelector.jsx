@@ -5,6 +5,7 @@ import { ThemeContext } from '../ThemeContext';
 import { toPng } from 'html-to-image';
 import jsPDF from 'jspdf';
 import ReactToPrint from 'react-to-print';
+import InvoiceFormat3 from './Invoiceformat3';
 
 const FormatSelector = () => {
   const { theme } = useContext(ThemeContext);
@@ -27,31 +28,54 @@ const FormatSelector = () => {
       });
   };
 
+  const themeStyles = {
+    black: { backgroundColor: '#000000', color: '#ffffff' },
+    green: { backgroundColor: '#00ff00', color: '#ffffff' },
+    blue: { backgroundColor: '#0000ff', color: '#ffffff' },
+    pink: { backgroundColor: '#ff69b4', color: '#ffffff' },
+    maroon: { backgroundColor: '#800000', color: '#ffffff' },
+  };
+
+  const currentThemeStyle = themeStyles[theme] || themeStyles.black;
+
   return (
     <div>
       <div style={{ marginBottom: '20px' }}>
-        <label>
+        <label style={{ color: currentThemeStyle.color }}>
           <input
             type="radio"
             value="format1"
             checked={selectedFormat === 'format1'}
             onChange={handleFormatChange}
+            style={{ accentColor: currentThemeStyle.backgroundColor }}
           />
-          Format 1
+         <span className='text-black mx-1'>Standard</span>
         </label>
-        <label style={{ marginLeft: '20px' }}>
+        <label style={{ marginLeft: '20px', color: currentThemeStyle.color }}>
           <input
             type="radio"
             value="format2"
             checked={selectedFormat === 'format2'}
             onChange={handleFormatChange}
+            style={{ accentColor: currentThemeStyle.backgroundColor }}
           />
-          Format 2
+          <span className='text-black mx-1'>Spreadsheet</span>
+        </label>
+        <label style={{ marginLeft: '20px', color: currentThemeStyle.color }}>
+          <input
+            type="radio"
+            value="format3"
+            checked={selectedFormat === 'format3'}
+            onChange={handleFormatChange}
+            style={{ accentColor: currentThemeStyle.backgroundColor }}
+          />
+         <span className='text-black mx-1'>Compact</span>
         </label>
       </div>
       <div style={{ position: 'absolute', top: '-99999px', minWidth: '750px' }}>
         {selectedFormat === 'format1' && <InvoiceFormat1 ref={printRef} theme={theme} />}
         {selectedFormat === 'format2' && <InvoiceFormat2 ref={printRef} theme={theme} />}
+        {selectedFormat === 'format3' && <InvoiceFormat3 ref={printRef} theme={theme} />}
       </div>
 
       <hr />
@@ -64,7 +88,6 @@ const FormatSelector = () => {
             Download/Print
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          
             <li>
               <ReactToPrint
                 trigger={() => <button className="dropdown-item">Print</button>}
