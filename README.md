@@ -52,7 +52,7 @@ The project is an Invoice Generator application built using React. It allows use
 ![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(372).png?raw=true)
 
 `Compact`
-![(https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(373).png?raw=true)
+![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(373).png?raw=true)
 
 ### Link
 [https://invoice-generator-two-peach.vercel.app/](https://invoice-generator-two-peach.vercel.app/)
