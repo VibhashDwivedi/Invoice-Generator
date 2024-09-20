@@ -7,9 +7,9 @@ const Notes = () => {
     
   return (
     <div>
-        <div>{formData4.notes}</div>
+        <div className='text-muted'>{formData4.notes}</div>
         <div>{formData4.notesDescription}</div>
-        <div>{formData4.termsConditions}</div>
+        <div className='text-muted mt-2'>{formData4.termsConditions}</div>
         <div>{formData4.termsConditionsDescription}</div>
     </div>
   )

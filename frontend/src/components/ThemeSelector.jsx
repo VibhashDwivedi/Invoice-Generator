@@ -16,13 +16,14 @@ const ThemeSelector = () => {
   const applyThemeStyles = (theme) => {
     const tableHeaders = document.querySelectorAll('.table-header th');
     const tableBorders = document.querySelectorAll('.table-bordered, .table-bordered td');
+    const lines = document.querySelectorAll('.line');
 
     const styles = {
-      black: { backgroundColor: '#000000', color: 'white' },
-      green: { backgroundColor: '#00ff00', color: 'white' },
-      blue: { backgroundColor: '#0000ff', color: 'white' },
-      pink: { backgroundColor: '#ff69b4', color: '#white' },
-      maroon: { backgroundColor: '#800000', color: 'white' },
+      black: { backgroundColor: '#000000', color: 'white', borderColor: '#000000' },
+      green: { backgroundColor: '#00ff00', color: 'white', borderColor: '#00ff00' },
+      blue: { backgroundColor: '#0000ff', color: 'white', borderColor: '#0000ff' },
+      pink: { backgroundColor: '#ff69b4', color: 'white', borderColor: '#ff69b4' },
+      maroon: { backgroundColor: '#800000', color: 'white', borderColor: '#800000' },
     };
 
     const themeStyles = styles[theme] || styles.black;
@@ -33,7 +34,11 @@ const ThemeSelector = () => {
     });
 
     tableBorders.forEach(element => {
-      element.style.borderColor = themeStyles.backgroundColor;
+      element.style.borderColor = themeStyles.borderColor;
+    });
+
+    lines.forEach(line => {
+      line.style.borderColor = themeStyles.borderColor;
     });
   };
 

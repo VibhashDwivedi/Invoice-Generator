@@ -1,17 +1,17 @@
-import React, { forwardRef, useContext, useEffect } from 'react';
-import Logo from './Logo';
-import UserDetail from './UserDetail';
-import Title from './Title';
-import InvoiceDetail from './InvoiceDetail';
-import Place from './Place';
-import '../css/format2.css'; // Adjust the path as necessary
-import { InvoiceContext } from '../InvoiceContext';
-import TableData from './Tabledata';
-import Notes from './Notes';
-import Summary from './Summary';
+import React, { forwardRef, useContext, useEffect } from "react";
+import Logo from "./Logo";
+import UserDetail from "./UserDetail";
+import Title from "./Title";
+import InvoiceDetail from "./InvoiceDetail";
+import Place from "./Place";
+import "../css/format2.css"; // Adjust the path as necessary
+import { InvoiceContext } from "../InvoiceContext";
+import TableData from "./Tabledata";
+import Notes from "./Notes";
+import Summary from "./Summary";
 
 const InvoiceFormat2 = forwardRef((props, ref) => {
-  const { formData } = useContext(InvoiceContext);
+  const { formData, formData2 } = useContext(InvoiceContext);
   const { theme } = props;
 
   useEffect(() => {
@@ -19,15 +19,38 @@ const InvoiceFormat2 = forwardRef((props, ref) => {
   }, [theme]);
 
   const applyThemeStyles = (theme) => {
-    const tableHeaders = document.querySelectorAll('.table-header th');
-    const tableBorders = document.querySelectorAll('.table-bordered, .table-bordered td');
+    const tableHeaders = document.querySelectorAll(".table-header th");
+    const tableBorders = document.querySelectorAll(
+      ".table-bordered, .table-bordered td"
+    );
+    const lines = document.querySelectorAll(".line");
 
     const styles = {
-      black: { backgroundColor: '#000000', color: '#ffffff' },
-      green: { backgroundColor: '#00ff00', color: '#ffffff' },
-      blue: { backgroundColor: '#0000ff', color: '#ffffff' },
-      pink: { backgroundColor: '#ff69b4', color: '#ffffff' },
-      maroon: { backgroundColor: '#800000', color: '#ffffff' },
+      black: {
+        backgroundColor: "#000000",
+        color: "#ffffff",
+        borderColor: "#000000",
+      },
+      green: {
+        backgroundColor: "#00ff00",
+        color: "#ffffff",
+        borderColor: "#00ff00",
+      },
+      blue: {
+        backgroundColor: "#0000ff",
+        color: "#ffffff",
+        borderColor: "#0000ff",
+      },
+      pink: {
+        backgroundColor: "#ff69b4",
+        color: "#ffffff",
+        borderColor: "#ff69b4",
+      },
+      maroon: {
+        backgroundColor: "#800000",
+        color: "#ffffff",
+        borderColor: "#800000",
+      },
     };
 
     const themeStyles = styles[theme] || styles.black;
@@ -38,18 +61,21 @@ const InvoiceFormat2 = forwardRef((props, ref) => {
     });
 
     tableBorders.forEach((element) => {
-      element.style.borderColor = themeStyles.backgroundColor;
+      element.style.borderColor = themeStyles.borderColor;
+    });
+
+    lines.forEach((line) => {
+      line.style.borderColor = themeStyles.borderColor;
     });
   };
-
   return (
-    <div className='card' style={{minHeight:'900px'}} ref={ref}>
+    <div className="card" style={{ minHeight: "900px" }} ref={ref}>
       <div className="card-body">
         <table className="table-bordered full-width-table p-3">
           <tbody>
-            <tr style={{ height: '110px' }} className='p-3'>
+            <tr style={{ height: "110px" }} className="p-3">
               <td colSpan="2">
-                <div className='d-flex justify-content-between'>
+                <div className="d-flex justify-content-between">
                   <div>
                     <Logo />
                     <UserDetail />
@@ -60,6 +86,10 @@ const InvoiceFormat2 = forwardRef((props, ref) => {
             </tr>
             <tr>
               <td>
+                <div className="d-flex">
+                  <div>{formData2.invoice}:</div>
+                  <div className="mx-5"> {formData2.invoiceValue}</div>
+                 </div>
                 <InvoiceDetail />
               </td>
               <td>
@@ -68,12 +98,17 @@ const InvoiceFormat2 = forwardRef((props, ref) => {
             </tr>
             <tr>
               <td colSpan={2}>
-                <div className='text-center'>{formData.clientName}</div>
+                <div className="text-center">{formData.clientName}</div>
               </td>
             </tr>
             <tr>
               <td colSpan={2}>
-                <div className=''>{formData.country}</div>
+                <div className="">{formData.companyName}</div>
+                <div className="">{formData.address}</div>
+                <div className="">{formData.city}</div>
+                <div className="">{formData.state}</div>
+                <div className="">{formData.country}</div>
+                <div className="">GSTIN {formData.gstin}</div>
               </td>
             </tr>
             <tr>
