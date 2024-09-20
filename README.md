@@ -45,13 +45,16 @@ The project is an Invoice Generator application built using React. It allows use
 
 ![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(369).png?raw=true)
 
-`Standard`
+`Compact`
+
 ![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(371).png?raw=true)
 
 `Spreadsheet`
+
 ![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(372).png?raw=true)
 
-`Compact`
+`Standard`
+
 ![](https://github.com/VibhashDwivedi/Invoice-Generator/blob/main/screenshots/Screenshot%20(373).png?raw=true)
 
 ### Link
