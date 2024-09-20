@@ -23,7 +23,7 @@ The project is an Invoice Generator application built using React. It allows use
    - Users can download the invoice as a PDF using the html-to-image and jsPDF libraries
    - The application also integrates with ReactToPrint to allow users to print the invoice directly from the browser.
 10. Responsive Design:
-   - The application is designed to be responsive, ensuring a good user experience on both desktop and mobile devices.
+    - The application is designed to be responsive, ensuring a good user experience on both desktop and mobile devices.
 
 ## Technologies Used
    ```sh
