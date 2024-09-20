@@ -12,7 +12,7 @@ import Place from './Place'
 
 const InvoiceFormat1 = forwardRef((props, ref) => {
 
-  const{logo, title,formData1, formData, formData2 , headerData, rows, formdata4} = useContext(InvoiceContext)
+  const{formData2 } = useContext(InvoiceContext)
 
   
   return (

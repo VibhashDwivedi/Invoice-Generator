@@ -1,0 +1,23 @@
+/* theme-selector.css */
+.theme-selector {
+    display: flex;
+    align-items: center;
+  }
+  
+  .theme-options {
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+  }
+  
+  .theme-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  .theme-circle.active {
+    border: 2px solid #000;
+  }

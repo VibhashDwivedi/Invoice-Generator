@@ -5,6 +5,7 @@ import jsPDF from "jspdf";
 import { InvoiceProvider } from "./InvoiceContext";
 import Print from "./components/Print";
 import InvoiceFormat1 from "./components/InvoiceFormat1";
+import ThemeSelector from "./components/ThemeSelector";
 function App() {
   const printRef = useRef();
 
@@ -28,7 +29,7 @@ function App() {
             <Invoice />
           </div>
           <div className="col-md-4">
-         
+          <ThemeSelector />
          
           </div>
         </div>
