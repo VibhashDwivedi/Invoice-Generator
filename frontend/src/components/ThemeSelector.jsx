@@ -1,17 +1,44 @@
-import React, { useState } from 'react';
-import '../css/black.css'; // Default theme
+import React, { useContext, useEffect } from 'react';
+import { ThemeContext } from '../ThemeContext';
 
 const ThemeSelector = () => {
-  const [theme, setTheme] = useState('black');
+  const { theme, setTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    // Apply the CSS styles based on the current theme
+    if (theme) {
+      applyThemeStyles(theme);
+    } else {
+      applyThemeStyles('black');
+    }
+  }, [theme]);
+
+  const applyThemeStyles = (theme) => {
+    const tableHeaders = document.querySelectorAll('.table-header th');
+    const tableBorders = document.querySelectorAll('.table-bordered, .table-bordered td');
+
+    const styles = {
+      black: { backgroundColor: '#000000', color: 'white' },
+      green: { backgroundColor: '#00ff00', color: 'white' },
+      blue: { backgroundColor: '#0000ff', color: 'white' },
+      pink: { backgroundColor: '#ff69b4', color: '#white' },
+      maroon: { backgroundColor: '#800000', color: 'white' },
+    };
+
+    const themeStyles = styles[theme] || styles.black;
+
+    tableHeaders.forEach(th => {
+      th.style.backgroundColor = themeStyles.backgroundColor;
+      th.style.color = themeStyles.color;
+    });
+
+    tableBorders.forEach(element => {
+      element.style.borderColor = themeStyles.backgroundColor;
+    });
+  };
 
   const handleThemeChange = (selectedTheme) => {
     setTheme(selectedTheme);
-
-    if (selectedTheme === 'black') {
-      import('../css/black.css');
-    } else if (selectedTheme === 'red') {
-      import('../css/red.css');
-    }
   };
 
   return (
@@ -21,8 +48,8 @@ const ThemeSelector = () => {
         <button
           style={{
             backgroundColor: 'black',
-            width: '30px',
-            height: '30px',
+            width: '20px',
+            height: '20px',
             borderRadius: '50%',
             border: 'none',
             cursor: 'pointer',
@@ -38,7 +65,94 @@ const ThemeSelector = () => {
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 color: 'white',
-                fontSize: '20px',
+                fontSize: '10px',
+              }}
+            >
+              ✓
+            </span>
+          )}
+        </button>
+      </div>
+      <div style={{ position: 'relative', marginRight: '10px' }}>
+        <button
+          style={{
+            backgroundColor: 'green',
+            width: '20px',
+            height: '20px',
+            borderRadius: '50%',
+            border: 'none',
+            cursor: 'pointer',
+            position: 'relative',
+          }}
+          onClick={() => handleThemeChange('green')}
+        >
+          {theme === 'green' && (
+            <span
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: 'white',
+                fontSize: '10px',
+              }}
+            >
+              ✓
+            </span>
+          )}
+        </button>
+      </div>
+      <div style={{ position: 'relative', marginRight: '10px' }}>
+        <button
+          style={{
+            backgroundColor: 'blue',
+            width: '20px',
+            height: '20px',
+            borderRadius: '50%',
+            border: 'none',
+            cursor: 'pointer',
+            position: 'relative',
+          }}
+          onClick={() => handleThemeChange('blue')}
+        >
+          {theme === 'blue' && (
+            <span
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: 'white',
+                fontSize: '10px',
+              }}
+            >
+              ✓
+            </span>
+          )}
+        </button>
+      </div>
+      <div style={{ position: 'relative', marginRight: '10px' }}>
+        <button
+          style={{
+            backgroundColor: 'pink',
+            width: '20px',
+            height: '20px',
+            borderRadius: '50%',
+            border: 'none',
+            cursor: 'pointer',
+            position: 'relative',
+          }}
+          onClick={() => handleThemeChange('pink')}
+        >
+          {theme === 'pink' && (
+            <span
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                transform: 'translate(-50%, -50%)',
+                color: 'white',
+                fontSize: '10px',
               }}
             >
               ✓
@@ -49,17 +163,17 @@ const ThemeSelector = () => {
       <div style={{ position: 'relative' }}>
         <button
           style={{
-            backgroundColor: 'red',
-            width: '30px',
-            height: '30px',
+            backgroundColor: 'maroon',
+            width: '20px',
+            height: '20px',
             borderRadius: '50%',
             border: 'none',
             cursor: 'pointer',
             position: 'relative',
           }}
-          onClick={() => handleThemeChange('red')}
+          onClick={() => handleThemeChange('maroon')}
         >
-          {theme === 'red' && (
+          {theme === 'maroon' && (
             <span
               style={{
                 position: 'absolute',
@@ -67,7 +181,7 @@ const ThemeSelector = () => {
                 left: '50%',
                 transform: 'translate(-50%, -50%)',
                 color: 'white',
-                fontSize: '20px',
+                fontSize: '10px',
               }}
             >
               ✓

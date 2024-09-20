@@ -14,15 +14,15 @@ const TableData = () => {
       <table width="100%" className="column" style={{ tableLayout: "fixed" }}>
         <thead>
           <tr className="table-header">
-            <th width="5%">#</th>
-            <th width="20%">{headerData.itemDescLabel}</th>
-            <th width="10%">HSN/SAC</th>
-            <th width="10%">{headerData.qtyLabel}</th>
-            <th width="10%">{headerData.rateLabel}</th>
-            <th width="10%">{headerData.sgstLabel}</th>
-            <th width="10%">{headerData.cgstLabel}</th>
-            <th width="10%">{headerData.cessLabel}</th>
-            <th width="15%">{headerData.amountLabel}</th>
+            <th width="5%" className="text-white">#</th>
+            <th width="20%" className="text-white">{headerData.itemDescLabel}</th>
+            <th width="10%" className="text-white">HSN/SAC</th>
+            <th width="10%" className="text-white">{headerData.qtyLabel}</th>
+            <th width="10%" className="text-white">{headerData.rateLabel}</th>
+            <th width="10%" className="text-white">{headerData.sgstLabel}</th>
+            <th width="10%" className="text-white">{headerData.cgstLabel}</th>
+            <th width="10%" className="text-white">{headerData.cessLabel}</th>
+            <th width="15%" className="text-white">{headerData.amountLabel}</th>
           </tr>
         </thead>
         <tbody>
@@ -42,11 +42,7 @@ const TableData = () => {
               
             </React.Fragment>
           ))}
-          <tr>
-                <td colSpan="9">
-                  <hr className="line" />
-                </td>
-              </tr>
+         
         </tbody>
       </table>
 

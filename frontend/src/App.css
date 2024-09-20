@@ -1,3 +1,10 @@
 *{
   box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+.sticky-download {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Adjust this value as needed */
 }
