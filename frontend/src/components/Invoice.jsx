@@ -120,7 +120,7 @@ const Invoice = forwardRef((props, ref) => {
 
           <div className="mb-4 mx-3 d-flex">
             <label htmlFor="place" className="form-label pt-2 ">
-              Place of Supply :
+              Place of Supply 
             </label>
             <select
         className="form-control responsive-input py-0"
