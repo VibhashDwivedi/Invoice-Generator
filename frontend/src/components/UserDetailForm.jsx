@@ -5,7 +5,7 @@ import { InvoiceContext } from '../InvoiceContext';
 
 const UserDetailForm = () => {
  
-  const { formData1, setFormData1 } = useContext(InvoiceContext);
+  const { formData1, setFormData1   } = useContext(InvoiceContext);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

@@ -7,13 +7,13 @@ import Table from "./Table";
 import FormFooter from "./FormFooter";
 import { InvoiceContext } from "../InvoiceContext";
 
-const Invoice = forwardRef((props, ref) => {
+const Invoice = forwardRef( (props, ref) => {
   const { title, setTitle, logo, setLogo, place, setPlace } = useContext(InvoiceContext);
   // State for Place
 
   
 
-  const handleLogoChange = (e) => {
+  const handleLogoChange = (e)   => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
